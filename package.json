@@ -1,0 +1,32 @@
+{
+  "name": "vercel-cron-runner",
+  "version": "0.1.0",
+  "description": "Runs Vercel cron jobs for self-hosted Next.js apps",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arjunkomath/vercel-cron-runner"
+  },
+  "keywords": ["vercel", "cron", "nextjs", "self-hosted"],
+  "type": "module",
+  "bin": {
+    "vercel-cron-runner": "./dist/index.js"
+  },
+  "files": ["dist"],
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "build": "rolldown -c",
+    "start": "node dist/index.js",
+    "test:json": "BASE_URL=https://httpbin.org CONFIG_PATH=examples/json node dist/index.js",
+    "test:ts": "BASE_URL=https://httpbin.org CONFIG_PATH=examples/typescript node dist/index.js"
+  },
+  "dependencies": {
+    "croner": "^9.0.0"
+  },
+  "devDependencies": {
+    "rolldown": "latest",
+    "@types/node": "^22.0.0"
+  }
+}
