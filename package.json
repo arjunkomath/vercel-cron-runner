@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arjunkomath/vercel-cron-runner"
+    "url": "git+https://github.com/arjunkomath/vercel-cron-runner.git"
   },
   "keywords": ["vercel", "cron", "nextjs", "self-hosted"],
   "type": "module",
@@ -17,6 +17,7 @@
     "node": ">=23.6.0"
   },
   "scripts": {
+    "prepack": "rolldown -c && chmod +x dist/index.js",
     "build": "rolldown -c",
     "start": "node dist/index.js",
     "test:json": "BASE_URL=https://httpbin.org CONFIG_PATH=examples/json node dist/index.js",
