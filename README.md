@@ -24,6 +24,14 @@ The runner reads `vercel.json` from the current working directory and schedules 
 | `CRON_SECRET` | No | Sent as `Authorization: Bearer <secret>` header |
 | `CONFIG_PATH` | No | Path to directory containing `vercel.json` (defaults to cwd) |
 
+### Local development
+
+Run cron jobs locally alongside your dev server:
+
+```bash
+BASE_URL=http://localhost:3000 npx vercel-cron-runner
+```
+
 ### Example `vercel.json`
 
 ```json
